@@ -10,6 +10,15 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+var arrayPrincipal = []
+  for(let key in objeto){
+        let arrayTemporal = []
+        arrayTemporal.push (key)
+        arrayTemporal.push(objeto[key])
+        arrayPrincipal.push(arrayTemporal)
+}
+return arrayPrincipal
+
 }
 
 
@@ -18,6 +27,16 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var objetoFinal = {};
+  for(var i=0; i < string.length; i++){
+          if(objetoFinal.hasOwnProperty(string[i])){
+                  objetoFinal[string[i]] = objetoFinal[string[i]] + 1
+          }else {
+              objetoFinal[string[i]] = 1;
+          }
+  }
+  return objetoFinal;
+
 }
 
 
@@ -26,6 +45,19 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var stringFinal = []
+  var stringArray  = s.split('')
+  for (let i = 0; i < stringArray.length; i++) {
+            if(stringArray[i] === stringArray[i].toUpperCase()){
+                stringFinal.push(stringArray[i])
+            }
+  }
+  for (let i = 0; i < stringArray.length; i++) {
+    if(stringArray[i] === stringArray[i].toLowerCase()){
+        stringFinal.push(stringArray[i])
+    }
+  }
+  return stringFinal.join('')
 }
 
 
